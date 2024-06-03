@@ -1,0 +1,195 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 198, 209);
+}
+#surat{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 280px;
+    width: 320px;
+    top: 180px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: crimson;
+}
+.suratan{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+.flap{
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 140px solid transparent;
+    border-top: 140px solid #830025;
+    transform-origin: top;
+}
+.kantong{
+    border-left: 160px solid #b20032;
+    border-right: 160px solid #b20032;
+    border-bottom: 140px solid #9b002c;
+    border-top: 140px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.letters{
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+}
+.letters::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.kata{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9rem;
+    font-style: italic;
+    line-height: 1.3rem;
+    position: absolute;
+    top: 5%;
+    left: 7%;
+    right: 7%;
+}
+.line-1{
+    text-align: justify;
+}
+
+.open .flap{
+    transform: rotateX(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+.close .flap{
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+.open .letters{
+    transform: translateY(-90px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+.close .letters{
+    transform: translateY(0px);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+.wrapper{
+    height: 500px;
+}
+.button-container{
+    text-align: center;
+}
+.button-container button{
+    font-weight: 800;
+    font-style: normal;
+    transition: all 0.1s linear;
+    -webkit--appearance: none;
+    background-color: transparent;
+    border: solid 2px #b20032;
+    border-radius: 4px;
+    color: #b20032;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 10px;
+    line-height: 1em;
+    text-decoration: none;
+    min-width: 120px;
+}
+.button-container button:hover{
+    background-color: #b20032;
+    color: #fff;
+    cursor:pointer;
+}
+
+/* Hearts */
+.hearts{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.heart{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+.heart::before,
+.heart:after{
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 80px;
+    width: 50px;
+    height: 80px;
+    background: #d00000;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0% 100%;
+}
+.heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.close .heart{
+    opacity: 0;
+    animation: none;
+}
+.a1{
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4s alternate;
+    animation-fill-mode: forwards;
+    animation-delay: .7s;
+}
+.a2{
+    left: 50%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4s alternate;
+    animation-fill-mode: forwards;
+    animation-delay: .7s;
+}
+.a3{
+    left: 10%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4s alternate;
+    animation-fill-mode: forwards;
+    animation-delay: .7s;
+}
+@keyframes slideUp {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: -600px;
+    }
+}
+@keyframes sideSway {
+    0%{
+        margin-left: 0;
+    }
+    100%{
+        margin-left: 50px;
+    }
+}

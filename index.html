@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.jpeg">
+    <title>My Love - Westlife</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="close" id="surat">
+            <div class="suratan flap"></div>
+            <div class="suratan kantong"></div>
+            <div class="letters">
+                <div class="kata">
+                    <div class="line-1">So, I say a little   prayer and hope my dreams will take me there. Where the skies are blue to see you once again, my love</div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                </div>
+            </div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="open">Buka</button>
+        <button id="close">Tutup</button>
+    </div>
+    <!-- <audio autoplay>
+        <source src="mylove.mp3" type="audio/mpeg" />
+    </audio> -->
+</body>
+<script>
+    let amplop = document.getElementById("surat");
+    let btnopen = document.getElementById("open");
+    let btnclose = document.getElementById("close");
+
+    function addClass(myClass){
+        amplop.classList.add(myClass);
+    }
+    
+    function removeClass(myClass){
+        amplop.classList.remove(myClass);
+    }
+
+    function open(){
+        addClass('open');
+        removeClass('close');
+    }
+
+    function close(){
+        addClass('close');
+        removeClass('open');
+    }
+    
+    btnopen.addEventListener('click', ()=>{
+        open();
+    })
+    btnclose.addEventListener('click', ()=>{
+        close();
+    })
+    
+</script>
+</html>
